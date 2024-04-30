@@ -9,10 +9,10 @@ export default function MainPage() {
         Welcome to "Convert Your Currencies Today!" This application allows you to easily convert currencies based on the latest exchange rates.
         Wheather you are planning a trip,managing your finances or simply curious about the value of your money in differentt currencies, this tool is here to help. 
       </p>
-      <div>
-        <section>
+      <div className="mt-5 flex items-center justify-center flex-col">
+        <section className="w-full lg:w-1/2">
           <form>
-          <div class="mb-5">
+          <div class="mb-4">
             <label htmlFor="" 
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               Date</label>
