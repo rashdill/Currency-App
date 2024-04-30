@@ -21,7 +21,7 @@ export default function MainPage() {
           <form>
             {/*This is date field */}
             <div className="mb-4">
-              <label htmlFor="" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label htmlFor={date} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Date
               </label>
               <input
