@@ -12,6 +12,7 @@ export default function MainPage() {
       <div className="mt-5 flex items-center justify-center flex-col">
         <section className="w-full lg:w-1/2">
           <form>
+            {/*This is date field */}
             <div className="mb-4">
               <label htmlFor="" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Date
@@ -56,6 +57,22 @@ export default function MainPage() {
                   Select the Target Currency</option>
               </select>
             </div>
+             {/*This is Amountfield */}
+             <div className="mb-4">
+              <label htmlFor="" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Amount in source currency
+              </label>
+              <input
+                type="text"
+                id=""
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-600 focus:border-pink-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-600 dark:focus:border-pink-600"
+                placeholder="Amount in source currency"
+                required
+              />
+            </div>
+            <button>
+              
+            </button>
           </form>
         </section>
       </div>
