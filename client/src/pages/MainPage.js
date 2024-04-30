@@ -4,6 +4,7 @@ export default function MainPage() {
   //states for the form feilds
   const [date , setDate] = useState("null");
   const [sourceCurrency , setSourceCurrency]=useState("null");
+  const [targetceCurrency , setTargetCurrency]=useState("null");
 
   return (
     <div>
