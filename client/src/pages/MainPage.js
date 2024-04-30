@@ -25,6 +25,7 @@ export default function MainPage() {
                 Date
               </label>
               <input
+              onChange={(e)=> setDate(e.target.value)}
                 type="Date"
                 id={date}
                 name={date}
@@ -80,7 +81,7 @@ export default function MainPage() {
                 required
               />
             </div>
-            <button className="bg-pink-700 hover:bg-pink-900 text-white font-medium py-2 px-4 rounded-md">
+            <button type="button"className="bg-pink-700 hover:bg-pink-900 text-white font-medium py-2 px-4 rounded-md">
               Get the target Currency
             </button>
           </form>
