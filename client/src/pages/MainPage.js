@@ -1,24 +1,18 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 
 export default function MainPage() {
-  //handlSubmit method 
-  const handlSubmit = (e) =>
-  {
+  // handlSubmit method
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(
-      date,
-      setSourceCurrency,
-      targetceCurrency,
-      amountInSourceCurrency
+    console.log(date, sourceCurrency, targetCurrency, amountInSourceCurrency);
+  };
 
-    );
-  }
-  //states for the form feilds
-  const [date , setDate] = useState("null");
-  const [sourceCurrency , setSourceCurrency]=useState("null");
-  const [targetceCurrency , setTargetCurrency]=useState("null");
-  const [amountInSourceCurrency , setAmountInSourceCurrency]=useState("null");
-  const [amountInTargetCurrency , setAmountInTargetCurrency]=useState("null");
+  // states for the form fields
+  const [date, setDate] = useState(null);
+  const [sourceCurrency, setSourceCurrency] = useState(null);
+  const [targetCurrency, setTargetCurrency] = useState(null);
+  const [amountInSourceCurrency, setAmountInSourceCurrency] = useState(null);
+  const [amountInTargetCurrency, setAmountInTargetCurrency] = useState(null);
 
   return (
     <div>
@@ -30,73 +24,70 @@ export default function MainPage() {
       </p>
       <div className="mt-5 flex items-center justify-center flex-col">
         <section className="w-full lg:w-1/2">
-          <form onSubmit={handlSubmit}>
-            {/*This is date field */}
+          <form onSubmit={handleSubmit}>
+            {/* This is date field */}
             <div className="mb-4">
-              <label htmlFor={date} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label htmlFor="date" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Date
               </label>
               <input
-              onChange={(e)=> setDate(e.target.value)}
-                type="Date"
-                id={date}
-                name={date}
+                onChange={(e) => setDate(e.target.value)}
+                type="date"
+                id="date"
+                name="date"
+                value={date}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-600 focus:border-pink-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-600 dark:focus:border-pink-600"
-                placeholder="name@flowbite.com"
+                placeholder="Enter date"
                 required
               />
             </div>
-            {/*This is Source Currency field */}
+            {/* This is Source Currency field */}
             <div className="mb-4">
-              <label htmlFor={sourceCurrency} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label htmlFor="sourceCurrency" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Source Currency
               </label>
               <select
-              onChange={(e)=>setSourceCurrency(e.target.value)}
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-600 focus:border-pink-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-600 dark:focus:border-pink-600"
-                placeholder="name@flowbite.com"
-                required
-                name={sourceCurrency}
-                id={sourceCurrency}
+                onChange={(e) => setSourceCurrency(e.target.value)}
                 value={sourceCurrency}
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-600 focus:border-pink-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-600 dark:focus:border-pink-600"
+                required
               >
-                <option value="">
-                  Select the Source Currency</option>
+                <option value="">Select</option>
+                {/* Add your currency options here */}
               </select>
             </div>
-            {/*This is Target Currency field */}
+            {/* This is Target Currency field */}
             <div className="mb-4">
-              <label htmlFor={targetceCurrency} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label htmlFor="targetCurrency" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Target Currency
               </label>
               <select
-              onChange={(e)=>setTargetCurrency(e.target.value)}
+                onChange={(e) => setTargetCurrency(e.target.value)}
+                value={targetCurrency}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-600 focus:border-pink-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-600 dark:focus:border-pink-600"
-                placeholder="name@flowbite.com"
                 required
-                name={targetceCurrency}
-                id={targetceCurrency}
               >
-                <option value="">
-                  Select the Target Currency</option>
+                <option value="">Select the Target Currency</option>
+                {/* Add your currency options here */}
               </select>
             </div>
-             {/*This is Amountfield */}
-             <div className="mb-4">
-              <label htmlFor={amountInSourceCurrency} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            {/* This is Amount field */}
+            <div className="mb-4">
+              <label htmlFor="amountInSourceCurrency" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Amount in source currency
               </label>
               <input
-              onChange={(e)=>setAmountInSourceCurrency(e.target.value)}
+                onChange={(e) => setAmountInSourceCurrency(e.target.value)}
                 type="text"
-                id={amountInSourceCurrency}
-                name={amountInSourceCurrency}
+                id="amountInSourceCurrency"
+                name="amountInSourceCurrency"
+                value={amountInSourceCurrency}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-600 focus:border-pink-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-600 dark:focus:border-pink-600"
-                placeholder="Amount in source currency"
+                placeholder="Enter amount"
                 required
               />
             </div>
-            <button className="bg-pink-700 hover:bg-pink-900 text-white font-medium py-2 px-4 rounded-md">
+            <button type="submit" className="bg-pink-700 hover:bg-pink-900 text-white font-medium py-2 px-4 rounded-md">
               Get the target Currency
             </button>
           </form>
