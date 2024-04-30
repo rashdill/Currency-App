@@ -3,7 +3,8 @@ import React,{useState} from 'react';
 export default function MainPage() {
   //states for the form feilds
   const [date , setDate] = useState("null");
-  
+  const [sourceCurrency , setSourceCurrency]=useState("null");
+
   return (
     <div>
       {/* lg for media(responsiveness) */}
