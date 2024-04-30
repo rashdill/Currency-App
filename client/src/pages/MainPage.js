@@ -5,6 +5,7 @@ export default function MainPage() {
   const [date , setDate] = useState("null");
   const [sourceCurrency , setSourceCurrency]=useState("null");
   const [targetceCurrency , setTargetCurrency]=useState("null");
+  const [amountInSourceCurrency , setAmountInSourceCurrency]=useState("null");
 
   return (
     <div>
