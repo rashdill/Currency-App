@@ -1,6 +1,18 @@
 import React,{useState} from 'react';
 
 export default function MainPage() {
+  //handlSubmit method 
+  const handlSubmit = (e) =>
+  {
+    e.preventDefault();
+    console.log(
+      date,
+      setSourceCurrency,
+      targetceCurrency,
+      amountInSourceCurrency
+
+    );
+  }
   //states for the form feilds
   const [date , setDate] = useState("null");
   const [sourceCurrency , setSourceCurrency]=useState("null");
@@ -18,7 +30,7 @@ export default function MainPage() {
       </p>
       <div className="mt-5 flex items-center justify-center flex-col">
         <section className="w-full lg:w-1/2">
-          <form>
+          <form onSubmit={handlSubmit}>
             {/*This is date field */}
             <div className="mb-4">
               <label htmlFor={date} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -84,7 +96,7 @@ export default function MainPage() {
                 required
               />
             </div>
-            <button type="button"className="bg-pink-700 hover:bg-pink-900 text-white font-medium py-2 px-4 rounded-md">
+            <button className="bg-pink-700 hover:bg-pink-900 text-white font-medium py-2 px-4 rounded-md">
               Get the target Currency
             </button>
           </form>
