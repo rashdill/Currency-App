@@ -26,7 +26,8 @@ export default function MainPage() {
               </label>
               <input
                 type="Date"
-                id=""
+                id={date}
+                name={date}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-600 focus:border-pink-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-600 dark:focus:border-pink-600"
                 placeholder="name@flowbite.com"
                 required
