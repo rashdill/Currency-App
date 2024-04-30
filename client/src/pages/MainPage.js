@@ -8,11 +8,11 @@ export default function MainPage() {
   };
 
   // states for the form fields
-  const [date, setDate] = useState(null);
-  const [sourceCurrency, setSourceCurrency] = useState(null);
-  const [targetCurrency, setTargetCurrency] = useState(null);
-  const [amountInSourceCurrency, setAmountInSourceCurrency] = useState(null);
-  const [amountInTargetCurrency, setAmountInTargetCurrency] = useState(null);
+  const [date, setDate] = useState();
+  const [sourceCurrency, setSourceCurrency] = useState("");
+  const [targetCurrency, setTargetCurrency] = useState("");
+  const [amountInSourceCurrency, setAmountInSourceCurrency] = useState(0);
+  const [amountInTargetCurrency, setAmountInTargetCurrency] = useState(0);
 
   return (
     <div>
