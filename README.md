@@ -24,4 +24,4 @@ module.exports = {
     @tailwind utilities;  
    * paste this code above body tag  
 5.Create your App
-6. for crate sate import useStae hook
+6. for create sate import useStae hook.
