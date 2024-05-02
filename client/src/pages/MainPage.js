@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 
 export default function MainPage() {
-  // handlSubmit method
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(date, sourceCurrency, targetCurrency, amountInSourceCurrency);
-  };
-
   // states for the form fields
   const [date, setDate] = useState();
   const [sourceCurrency, setSourceCurrency] = useState("");
   const [targetCurrency, setTargetCurrency] = useState("");
   const [amountInSourceCurrency, setAmountInSourceCurrency] = useState(0);
   const [amountInTargetCurrency, setAmountInTargetCurrency] = useState(0);
+
+   // handlSubmit method
+   const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(date, sourceCurrency, targetCurrency, amountInSourceCurrency);
+  };
 
   return (
     <div>
@@ -27,15 +27,15 @@ export default function MainPage() {
           <form onSubmit={handleSubmit}>
             {/* This is date field */}
             <div className="mb-4">
-              <label htmlFor="date" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label htmlFor={date} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Date
               </label>
               <input
                 onChange={(e) => setDate(e.target.value)}
-                type="date"
-                id="date"
-                name="date"
-                value={date}
+                type="Date"
+                id={date}
+                name={date}
+                /*value={date}*/
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-600 focus:border-pink-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-600 dark:focus:border-pink-600"
                 placeholder="Enter date"
                 required
@@ -43,29 +43,41 @@ export default function MainPage() {
             </div>
             {/* This is Source Currency field */}
             <div className="mb-4">
-              <label htmlFor="sourceCurrency" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label htmlFor={sourceCurrency} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Source Currency
               </label>
               <select
                 onChange={(e) => setSourceCurrency(e.target.value)}
-                value={sourceCurrency}
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-600 focus:border-pink-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-600 dark:focus:border-pink-600"
+                
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-600
+                 focus:border-pink-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
+                  dark:text-white dark:focus:ring-pink-600 dark:focus:border-pink-600"
                 required
+                name={sourceCurrency}
+                id={sourceCurrency}
+                value={sourceCurrency}
               >
-                <option value="">Select</option>
+                <option value="">Select source currency</option>
                 {/* Add your currency options here */}
               </select>
             </div>
             {/* This is Target Currency field */}
             <div className="mb-4">
-              <label htmlFor="targetCurrency" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label htmlFor={targetCurrency} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Target Currency
               </label>
               <select
                 onChange={(e) => setTargetCurrency(e.target.value)}
-                value={targetCurrency}
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-600 focus:border-pink-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-600 dark:focus:border-pink-600"
+               
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                 focus:ring-pink-600 focus:border-pink-600 block w-full p-2.5 dark:bg-gray-700
+                  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-600
+                   dark:focus:border-pink-600"
                 required
+                name={targetCurrency}
+                id={targetCurrency}
+                value={targetCurrency}
+
               >
                 <option value="">Select the Target Currency</option>
                 {/* Add your currency options here */}
@@ -73,21 +85,21 @@ export default function MainPage() {
             </div>
             {/* This is Amount field */}
             <div className="mb-4">
-              <label htmlFor="amountInSourceCurrency" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label htmlFor={amountInSourceCurrency} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Amount in source currency
               </label>
               <input
                 onChange={(e) => setAmountInSourceCurrency(e.target.value)}
-                type="text"
-                id="amountInSourceCurrency"
-                name="amountInSourceCurrency"
-                value={amountInSourceCurrency}
+                type="number"
+                id={amountInSourceCurrency}
+                name={amountInSourceCurrency}
+                
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-600 focus:border-pink-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-600 dark:focus:border-pink-600"
-                placeholder="Enter amount"
+                placeholder="Amount in source currency"
                 required
               />
             </div>
-            <button type="submit" className="bg-pink-700 hover:bg-pink-900 text-white font-medium py-2 px-4 rounded-md">
+            <button type="button" className="bg-pink-700 hover:bg-pink-900 text-white font-medium py-2 px-4 rounded-md">
               Get the target Currency
             </button>
           </form>
