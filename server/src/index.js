@@ -8,7 +8,6 @@ app.use(express.json());
 app.use(cors());
 
 //listen to a port
-app.listen(5000,()=>){
+app.listen(5000, () => {
     console.log("SERVER STARTED");
-
-}
+});
