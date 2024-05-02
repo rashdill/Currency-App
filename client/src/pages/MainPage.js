@@ -71,9 +71,12 @@ export default function MainPage() {
                 value={sourceCurrency}
               >
                 <option value="">Select source currency</option>
-                {Object.keys(currencyNames).map((currency)=>{
-                  
-                })}
+                {Object.keys(currencyNames).map((currency)=>(
+                  <option className="p-1" key={currency} value={currency}>
+                    {currencyNames[currency]}
+                  </option>
+
+                ))}
                 {/* Add your currency options here */}
               </select>
             </div>
