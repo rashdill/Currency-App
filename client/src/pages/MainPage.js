@@ -11,7 +11,7 @@ export default function MainPage() {
    // handlSubmit method
    const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(date, sourceCurrency, targetCurrency, amountInSourceCurrency);
+    console.log(date, setSourceCurrency, targetCurrency, amountInSourceCurrency);
   };
 
   return (
@@ -99,7 +99,7 @@ export default function MainPage() {
                 required
               />
             </div>
-            <button type="button" className="bg-pink-700 hover:bg-pink-900 text-white font-medium py-2 px-4 rounded-md">
+            <button className="bg-pink-700 hover:bg-pink-900 text-white font-medium py-2 px-4 rounded-md">
               Get the target Currency
             </button>
           </form>
