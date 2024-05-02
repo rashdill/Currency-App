@@ -1,18 +1,31 @@
-import React, { useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
+import axios from "axios";
 export default function MainPage() {
   // states for the form fields
-  const [date, setDate] = useState();
+  const [date, setDate] = useState(null);
   const [sourceCurrency, setSourceCurrency] = useState("");
   const [targetCurrency, setTargetCurrency] = useState("");
   const [amountInSourceCurrency, setAmountInSourceCurrency] = useState(0);
   const [amountInTargetCurrency, setAmountInTargetCurrency] = useState(0);
-
+  const [currencyNames,setCurrencyNames] = useState([]);
    // handlSubmit method
    const handleSubmit = (e) => {
     e.preventDefault();
     console.log(date, setSourceCurrency, targetCurrency, amountInSourceCurrency);
   };
+//get all currency names
+  useEffect(()=>{
+    const getCurrencyNames = async() =>{
+      try{
+        const responce = await axios.get("http://localhost:5000/getAllCurrencies");
+        setCurrencyNames(responce.data);
+
+      }catch(err){
+        console.error(err);
+      }
+    };
+    getCurrencyNames();
+  },[])
 
   return (
     <div>
